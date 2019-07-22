@@ -12,4 +12,9 @@ class PostsController < ApplicationController
   end
 
   # add create method here
+  def create
+    # binding.pry
+    Post.create(title: params[:title], description: params[:description])
+    redirect_to posts_path
+  end
 end
